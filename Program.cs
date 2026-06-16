@@ -2,6 +2,7 @@
 using ModsenLogistics.Tasks.Task2;
 using ModsenLogistics.Tasks.Task3;
 using ModsenLogistics.Tasks.Task4;
+using ModsenLogistics.Tasks.Task5;
 
 namespace ModsenLogistics
 {
@@ -37,6 +38,22 @@ namespace ModsenLogistics
             Console.WriteLine(TransportFactory.Create("Поезд").CalculateTime(distance));
             Console.WriteLine(TransportFactory.Create("Самолет").CalculateTime(distance));
             Console.WriteLine(TransportFactory.Create("Грузовик").CalculateTime(distance));
+
+            // Выполнение задачи 5. Аналитика автопарка (LINQ)
+            // Индивидуальное задание: Отсутсвтует.
+            var vehicles = new List<Vehicle>
+        {
+            new Vehicle("A123BC", "Sedan", 8.5, 60000),
+            new Vehicle("B456DE", "Sedan", 7.8, 45000),
+            new Vehicle("C789FG", "SUV", 12.3, 70000),
+            new Vehicle("D012HI", "SUV", 14.1, 80000),
+            new Vehicle("E345JK", "Truck", 15.2, 90000)
+        };
+            var result = VehicleStatisticsService.GetValues(vehicles);
+            foreach (var item in result)
+            {
+                Console.WriteLine($"Категория: {item.Key}, Средний расход: {item.Value:F2} л/100км");
+            }
         }
     }
 }
