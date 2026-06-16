@@ -1,8 +1,9 @@
 ﻿using ModsenLogistics.Tasks.Task1;
 using ModsenLogistics.Tasks.Task2;
 using ModsenLogistics.Tasks.Task3;
+using ModsenLogistics.Tasks.Task4;
 
-namespace TestTask
+namespace ModsenLogistics
 {
     class Programm
     {
@@ -29,6 +30,13 @@ namespace TestTask
             container.UnloadCargo(40);
             Console.WriteLine(container.Status);
             Console.WriteLine(container.CurrentVolume);
+
+            // Выполнение задачи 4. Система тарифов (Наследование и Полиморфизм)
+            // Индивидуальное задание: Создать класс TransportFactory, который создает нужный объект (Truck/Plane) на основе переданной строки.
+            double distance = 1000;
+            Console.WriteLine(TransportFactory.Create("Поезд").CalculateTime(distance));
+            Console.WriteLine(TransportFactory.Create("Самолет").CalculateTime(distance));
+            Console.WriteLine(TransportFactory.Create("Грузовик").CalculateTime(distance));
         }
     }
 }
