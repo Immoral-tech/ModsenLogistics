@@ -3,6 +3,8 @@ using ModsenLogistics.Tasks.Task2;
 using ModsenLogistics.Tasks.Task3;
 using ModsenLogistics.Tasks.Task4;
 using ModsenLogistics.Tasks.Task5;
+using ModsenLogistics.Tasks.Task6;
+
 
 namespace ModsenLogistics
 {
@@ -54,6 +56,18 @@ namespace ModsenLogistics
             {
                 Console.WriteLine($"Категория: {item.Key}, Средний расход: {item.Value:F2} л/100км");
             }
+
+            // Выполнение задачи 6. Очередь на разгрузку (Коллекции Queue / PriorityQueue)
+            // Индивидуальное задание: В Задаче 6 очередь должна быть реализована с использованием потокобезопасных коллекций (ConcurrentQueue).
+            var Dock1 = new WarehouseDock();
+            Dock1.RegisterTruck("hejrtrw", 1);
+            Dock1.RegisterTruck("4326", 3);
+            Dock1.RegisterTruck("31251235613", 1);
+            Dock1.RegisterTruck("12516t678", 3);
+            Dock1.RegisterTruck("12445", 2);
+            Dock1.ProcessNextTruck();
+            Dock1.ProcessNextTruck();
+            Dock1.ProcessNextTruck();
         }
     }
 }
