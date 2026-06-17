@@ -4,6 +4,7 @@ using ModsenLogistics.Tasks.Task3;
 using ModsenLogistics.Tasks.Task4;
 using ModsenLogistics.Tasks.Task5;
 using ModsenLogistics.Tasks.Task6;
+using ModsenLogistics.Tasks.Task7;
 
 
 namespace ModsenLogistics
@@ -18,12 +19,12 @@ namespace ModsenLogistics
             Console.WriteLine(DeliveryCalculator.СalculateDeliveryCost(10, 5, true, "Express"));
 
             // Выполнение задачи 2. Оптимальное размещение груза.
-            // Индивидуальное задание: отсутсвует.
+            // Индивидуальное задание: Отсутсвует.
             Console.WriteLine("Задача 2. Оптимальное размещение груза.");
             Console.WriteLine(ContainerCalculator.GetRequiredContainers([10, 5, 7, 10, 12], 20));
 
             // Выполнение задачи 3. Модель "Умный Контейнер"
-            // Индивидуальное задание: отсутствует.
+            // Индивидуальное задание: Отсутствует.
             Console.WriteLine("Задача 3. Модель Умный Контейнер");
             SmartContainer container = new SmartContainer("1", 100);
             Console.WriteLine(container.Status);
@@ -68,6 +69,10 @@ namespace ModsenLogistics
             Dock1.ProcessNextTruck();
             Dock1.ProcessNextTruck();
             Dock1.ProcessNextTruck();
+
+            // Выполнение задачи 7. Парсер накладных (Строки и Exception Handling)
+            // Индивидуальное задание: Отсутствует.
+            TestWaybillParser.Test();
         }
     }
 }
